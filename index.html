@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CPU Scheduling Algorithms Simulator</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="fcfs">First Come First Serve (FCFS)</button>
+            <button class="tab-btn" data-tab="sjf">Shortest Job First (SJF)</button>
+            <button class="tab-btn" data-tab="srtf">Shortest Remaining Time First (SRTF)</button>
+            <button class="tab-btn" data-tab="priority">Non-Preemptive Priority</button>
+        </div>
+        
+        <div class="tab-content active" id="fcfs">
+            <h2>First Come First Serve (FCFS)</h2>
+            <div class="algorithm-form">
+                <div class="form-group">
+                    <label for="fcfs-process-count">Number of Processes:</label>
+                    <input type="number" id="fcfs-process-count" min="1" max="10" value="3">
+                    <button id="fcfs-generate-btn">Generate Process Table</button>
+                </div>
+                
+                <div id="fcfs-process-table" class="process-table">
+                    <!-- Process input table will be generated here -->
+                </div>
+                
+                <button id="fcfs-calculate-btn" class="calculate-btn">Calculate</button>
+            </div>
+            
+            <div class="results" id="fcfs-results">
+                <h3>Results</h3>
+                <div class="gantt-chart-container">
+                    <h4>Gantt Chart</h4>
+                    <div id="fcfs-gantt-chart" class="gantt-chart"></div>
+                </div>
+                
+                <h4>Process Details</h4>
+                <div class="result-table-container">
+                    <table id="fcfs-result-table" class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Process ID</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Start Time</th>
+                                <th>Completion Time</th>
+                                <th>Turnaround Time</th>
+                                <th>Waiting Time</th>
+                                <th>Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="metrics" id="fcfs-metrics">
+                    <!-- Metrics will be displayed here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="sjf">
+            <h2>Shortest Job First (SJF)</h2>
+            <div class="algorithm-form">
+                <div class="form-group">
+                    <label for="sjf-process-count">Number of Processes:</label>
+                    <input type="number" id="sjf-process-count" min="1" max="10" value="3">
+                    <button id="sjf-generate-btn">Generate Process Table</button>
+                </div>
+                
+                <div id="sjf-process-table" class="process-table">
+                    <!-- Process input table will be generated here -->
+                </div>
+                
+                <button id="sjf-calculate-btn" class="calculate-btn">Calculate</button>
+            </div>
+            
+            <div class="results" id="sjf-results">
+                <h3>Results</h3>
+                <div class="gantt-chart-container">
+                    <h4>Gantt Chart</h4>
+                    <div id="sjf-gantt-chart" class="gantt-chart"></div>
+                </div>
+                
+                <h4>Process Details</h4>
+                <div class="result-table-container">
+                    <table id="sjf-result-table" class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Process ID</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Start Time</th>
+                                <th>Completion Time</th>
+                                <th>Turnaround Time</th>
+                                <th>Waiting Time</th>
+                                <th>Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="metrics" id="sjf-metrics">
+                    <!-- Metrics will be displayed here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="srtf">
+            <h2>Shortest Remaining Time First (SRTF)</h2>
+            <div class="algorithm-form">
+                <div class="form-group">
+                    <label for="srtf-process-count">Number of Processes:</label>
+                    <input type="number" id="srtf-process-count" min="1" max="10" value="3">
+                    <button id="srtf-generate-btn">Generate Process Table</button>
+                </div>
+                
+                <div id="srtf-process-table" class="process-table">
+                    <!-- Process input table will be generated here -->
+                </div>
+                
+                <button id="srtf-calculate-btn" class="calculate-btn">Calculate</button>
+            </div>
+            
+            <div class="results" id="srtf-results">
+                <h3>Results</h3>
+                <div class="gantt-chart-container">
+                    <h4>Gantt Chart</h4>
+                    <div id="srtf-gantt-chart" class="gantt-chart"></div>
+                </div>
+                
+                <h4>Process Details</h4>
+                <div class="result-table-container">
+                    <table id="srtf-result-table" class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Process ID</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Start Time</th>
+                                <th>Completion Time</th>
+                                <th>Turnaround Time</th>
+                                <th>Waiting Time</th>
+                                <th>Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="metrics" id="srtf-metrics">
+                    <!-- Metrics will be displayed here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="priority">
+            <h2>Non-Preemptive Priority Scheduling</h2>
+            <div class="algorithm-form">
+                <div class="form-group">
+                    <label for="priority-process-count">Number of Processes:</label>
+                    <input type="number" id="priority-process-count" min="1" max="10" value="3">
+                    <button id="priority-generate-btn">Generate Process Table</button>
+                </div>
+                
+                <div id="priority-process-table" class="process-table">
+                    <!-- Process input table will be generated here -->
+                </div>
+                
+                <button id="priority-calculate-btn" class="calculate-btn">Calculate</button>
+            </div>
+            
+            <div class="results" id="priority-results">
+                <h3>Results</h3>
+                <div class="gantt-chart-container">
+                    <h4>Gantt Chart</h4>
+                    <div id="priority-gantt-chart" class="gantt-chart"></div>
+                </div>
+                
+                <h4>Process Details</h4>
+                <div class="result-table-container">
+                    <table id="priority-result-table" class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Process ID</th>
+                                <th>Arrival Time</th>
+                                <th>Burst Time</th>
+                                <th>Priority</th>
+                                <th>Start Time</th>
+                                <th>Completion Time</th>
+                                <th>Turnaround Time</th>
+                                <th>Waiting Time</th>
+                                <th>Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="metrics" id="priority-metrics">
+                    <!-- Metrics will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
